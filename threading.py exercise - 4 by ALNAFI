@@ -1,3 +1,5 @@
+
+
 ######################## QUESTION 4: THREADING ALNAFI INSTITUTE ########################
 # You are required to conduct analysis on data obtained from a plant related to temperature readings. 
 # The file temperatures.csv contains the appropriate data required for this task.
@@ -144,3 +146,5 @@ main()
 # Average hourly temperatures are  [21.01, 16.83, 15.7]
 # Deviation in temperature is:  5.60796517075502
 # Without threading it took: 0.0 seconds
+
+
