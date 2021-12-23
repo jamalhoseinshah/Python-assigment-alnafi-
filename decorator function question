@@ -1,0 +1,24 @@
+
+
+"""
+Question  set decorator function which print the inputs and the operation
+ being performed. eg. for additon, the decorator function must print
+ the arguments of the function as 1+3 =4
+"""
+
+
+def sum_two_numbers(a, b): 
+    print("This is called inside the function") 
+    return a + b 
+
+a, b = 1, 3
+# getting the value through return of the function 
+print('Sum function value:', sum_two_numbers(a, b))
+
+
+################################# OUTPUT #################################################
+
+This is called inside the function
+Sum function value: 4
+
+
