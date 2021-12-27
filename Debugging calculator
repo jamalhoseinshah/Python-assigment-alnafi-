@@ -1,21 +1,4 @@
 
-
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 27 15:25:53 2021
-
-@author: lc
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Dec  2 13:58:25 2021
-
-@author: lc
-"""
-
-
-
 import pdb
 
 def sum_values(a, b):
@@ -34,15 +17,17 @@ def division_values(a, b):
 def test_function():
     pdb.set_trace()  #we have added a breakpoint here. The code pause execution here.
     print('The above four function lines are corrected ')
-    value  = sum_values(2, 3)
-    value = multiple_values(2, 3)
-    value = multiple_values(4, 1)
-    value = division_values(12, 3)
+    value  = sum_values(2,3)
+    value = multiple_values(2,3)
+    value = subtract_values(4,1)
+    value = division_values(12,3)
     print('The code is done!')
     return value 
 
 
 test_function()
+
+
 
 ####################################### OUTPUT ########################################################
 
@@ -52,12 +37,35 @@ The code is done!
 4.0
 
 
+########### We have done following calculation with regarding established function in python #########################
+
+value = multiple_values(2,3)
+
+value
+Out[42]: 6
+
+value = division_values(12,3)
+
+value 
+Out[44]: 4.0
+
+value = subtract_values(4,1)
+
+value 
+Out[46]: 3
+
+value  = sum_values(2,3)
+
+value
+Out[48]: 5
+
+
 ############################################ SECOND METHOD ##############################################
 # -*- coding: utf-8 -*-
 """
-Created on Thu Dec  2 13:58:25 2021
+Intially created this below calculator with Debugging function.
 
-@author: lc
+@author: Jamal hosein shah
 """
 
 
@@ -88,9 +96,9 @@ def test_function():
     print('This is the seventh line')
     print("This is the eight line.")
     value  = sum_values(2, 3)
-    value = multiple_values(2, 3)
-    value = multiple_values(4, 1)
-    value = division_values(12, 3)
+    value = multiple_values(2,3)
+    value = subtract_values(4,1)
+    value = division_values(12,3)
     print('The code is done!')
     return value 
 
