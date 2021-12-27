@@ -95,7 +95,7 @@ def test_function():
     print("This is the sixth line.")
     print('This is the seventh line')
     print("This is the eight line.")
-    value  = sum_values(2, 3)
+    value  = sum_values(2,3)
     value = multiple_values(2,3)
     value = subtract_values(4,1)
     value = division_values(12,3)
