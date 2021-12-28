@@ -25,65 +25,74 @@
 </data>
 """
 
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec 28 14:48:20 2021
 
-# what is root in country_data.xml ?
+@author: lc
+"""
+# 1 what is root in country_data ?
 
 import xml.etree.ElementTree as ET
 tree = ET.parse('C:\\tempdir\kamal\country_data.xml')
 root = tree.getroot()
 
-# 1 extract children data ?
+# 2 extract children data ?
 for child in root:
     print(child.tag, child.attrib)
     
     
-# 2 extract elements by defining particular element
+# 3 extract elements by defining particular element ?
     
 for neighbor in root.iter('neighbor'):
     print(neighbor.attrib)
     
-# 3 extract children details with first element
+# 4 extract children details with first element
     
 for country in root.findall('country'):
     rank = country.find('rank').text
     name = country.get('name')
     print(name, rank)
 
-# 4 Extract children details
+# 5 Extract children details
 for country in root.findall('country'):
      name = country.get('name')
      print(name)
 
-# 5 Extract element as year
+# 6 Extract element as year
+
 for country in root.findall('country'):
-    rank = country.find('year').text
-    print(rank)
+    year = country.find('year').text
+    print(year)
      
-# 6 extract element as pdppc
+# 7 extract element as pdppc
+
 for country in root.findall('country'):
-    rank = country.find('gdppc').text
-    print(rank)
+    gdppc = country.find('gdppc').text
+    print(gdppc)
+   
+###################################### OUTPUT ########################################################
     
- ################################################# OUTPUT ############################################################
- 
- 
+    
 import xml.etree.ElementTree as ET
 tree = ET.parse('C:\\tempdir\kamal\country_data.xml')
 root = tree.getroot()
 
-# 1
-root
-Out[2]: <Element 'data' at 0x000001A3E7467BD0>
+# 1 what is root in country_data ?
 
-# 2
+root
+Out[2]: <Element 'data' at 0x0000012DBF496770>
+
+# 2 extract children data ?
+
 for child in root:
     print(child.tag, child.attrib)
 country {'name': 'Liechtenstein'}
 country {'name': 'Singapore'}
 country {'name': 'Panama'}
 
+# 3 extract elements by defining particular element
 
-# 3
 for neighbor in root.iter('neighbor'):
     print(neighbor.attrib)
 {'name': 'Austria', 'direction': 'E'}
@@ -92,8 +101,8 @@ for neighbor in root.iter('neighbor'):
 {'name': 'Costa Rica', 'direction': 'W'}
 {'name': 'Colombia', 'direction': 'E'}
 
+# 4 extract children details with first element
 
-# 4 
 for country in root.findall('country'):
     rank = country.find('rank').text
     name = country.get('name')
@@ -102,7 +111,8 @@ Liechtenstein 1
 Singapore 4
 Panama 68
 
-# 5
+# 5 Extract children details
+
 for country in root.findall('country'):
      name = country.get('name')
      print(name)
@@ -110,14 +120,23 @@ Liechtenstein
 Singapore
 Panama
 
-# 6
+# 6 Extract element as year
+
 for country in root.findall('country'):
-    rank = country.find('year').text
-    print(rank)
+    year = country.find('year').text
+    print(year)
 2008
 2011
 2011
- 
-    
-    
+
+# 7 extract element as pdppc
+
+for country in root.findall('country'):
+    gdppc = country.find('gdppc').text
+    print(gdppc)
+141100
+59900
+13600
+
+
     
