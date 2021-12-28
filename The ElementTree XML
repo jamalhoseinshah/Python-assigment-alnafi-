@@ -1,0 +1,123 @@
+# -*- coding: utf-8 -*-
+"""
+<?xml version="1.0"?>
+<data>
+    <country name="Liechtenstein">
+        <rank>1</rank>
+        <year>2008</year>
+        <gdppc>141100</gdppc>
+        <neighbor name="Austria" direction="E"/>
+        <neighbor name="Switzerland" direction="W"/>
+    </country>
+    <country name="Singapore">
+        <rank>4</rank>
+        <year>2011</year>
+        <gdppc>59900</gdppc>
+        <neighbor name="Malaysia" direction="N"/>
+    </country>
+    <country name="Panama">
+        <rank>68</rank>
+        <year>2011</year>
+        <gdppc>13600</gdppc>
+        <neighbor name="Costa Rica" direction="W"/>
+        <neighbor name="Colombia" direction="E"/>
+    </country>
+</data>
+"""
+
+
+# what is root in country_data.xml ?
+
+import xml.etree.ElementTree as ET
+tree = ET.parse('C:\\tempdir\kamal\country_data.xml')
+root = tree.getroot()
+
+# 1 extract children data ?
+for child in root:
+    print(child.tag, child.attrib)
+    
+    
+# 2 extract elements by defining particular element
+    
+for neighbor in root.iter('neighbor'):
+    print(neighbor.attrib)
+    
+# 3 extract children details with first element
+    
+for country in root.findall('country'):
+    rank = country.find('rank').text
+    name = country.get('name')
+    print(name, rank)
+
+# 4 Extract children details
+for country in root.findall('country'):
+     name = country.get('name')
+     print(name)
+
+# 5 Extract element as year
+for country in root.findall('country'):
+    rank = country.find('year').text
+    print(rank)
+     
+# 6 extract element as pdppc
+for country in root.findall('country'):
+    rank = country.find('gdppc').text
+    print(rank)
+    
+ ################################################# OUTPUT ############################################################
+ 
+ 
+import xml.etree.ElementTree as ET
+tree = ET.parse('C:\\tempdir\kamal\country_data.xml')
+root = tree.getroot()
+
+# 1
+root
+Out[2]: <Element 'data' at 0x000001A3E7467BD0>
+
+# 2
+for child in root:
+    print(child.tag, child.attrib)
+country {'name': 'Liechtenstein'}
+country {'name': 'Singapore'}
+country {'name': 'Panama'}
+
+
+# 3
+for neighbor in root.iter('neighbor'):
+    print(neighbor.attrib)
+{'name': 'Austria', 'direction': 'E'}
+{'name': 'Switzerland', 'direction': 'W'}
+{'name': 'Malaysia', 'direction': 'N'}
+{'name': 'Costa Rica', 'direction': 'W'}
+{'name': 'Colombia', 'direction': 'E'}
+
+
+# 4 
+for country in root.findall('country'):
+    rank = country.find('rank').text
+    name = country.get('name')
+    print(name, rank)
+Liechtenstein 1
+Singapore 4
+Panama 68
+
+# 5
+for country in root.findall('country'):
+     name = country.get('name')
+     print(name)
+Liechtenstein
+Singapore
+Panama
+
+# 6
+for country in root.findall('country'):
+    rank = country.find('year').text
+    print(rank)
+2008
+2011
+2011
+ 
+    
+    
+    
