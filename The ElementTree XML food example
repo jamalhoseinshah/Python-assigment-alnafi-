@@ -1,0 +1,140 @@
+# -*- coding: utf-8 -*-
+"""
+<?xml version="1.0"?>
+<breakfast_menu>
+<food>
+	<name>Belgian Waffles</name>
+	<price>$5.95</price>
+	<description>Two of our famous Belgian Waffles with plenty of real maple syrup</description>
+	<calories>650</calories>
+</food>
+<food>
+	<name>Strawberry Belgian Waffles</name>
+	<price>$7.95</price>
+	<description>Light Belgian waffles covered with strawberries and whipped cream</description>
+	<calories>900</calories>
+</food>
+<food>
+	<name>Berry-Berry Belgian Waffles</name>
+	<price>$8.95</price>
+	<description>Belgian waffles covered with assorted fresh berries and whipped cream</description>
+	<calories>900</calories>
+</food>
+<food>
+	<name>French Toast</name>
+	<price>$4.50</price>
+	<description>Thick slices made from our homemade sourdough bread</description>
+	<calories>600</calories>
+</food>
+<food>
+	<name>Homestyle Breakfast</name>
+	<price>$6.95</price>
+	<description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+	<calories>950</calories>
+</food>
+</breakfast_menu>
+"""
+
+
+
+# what is root in jamals.xml ?
+
+import xml.etree.ElementTree as ET
+tree = ET.parse('C:\\tempdir\kamal\jamals.xml')
+root = tree.getroot()
+
+# what is root in jamals.xml
+
+for child in root:
+    print(child.tag, child.attrib)
+    
+    
+# what are the names
+
+for country in root.findall('food'):
+    name = country.find('name').text
+    print(name)
+     
+# what are the prices 
+
+for country in root.findall('food'):
+    price = country.find('price').text
+    print(price)
+    
+# what are the descriptions
+
+for country in root.findall('food'):
+    description = country.find('description').text
+    print(description)    
+
+# what are the calories.
+
+for country in root.findall('food'):
+    calories = country.find('calories').text
+    print(calories) 
+    
+    
+########################################### OUTPUT ##########################################################################
+
+import xml.etree.ElementTree as ET
+tree = ET.parse('C:\\tempdir\kamal\jamals.xml')
+root = tree.getroot()
+
+
+# what is root 
+root
+Out[2]: <Element 'breakfast_menu' at 0x00000210AC6B88B0>
+
+# what is children
+
+for child in root:
+    print(child.tag, child.attrib)
+food {}
+food {}
+food {}
+food {}
+food {}
+
+# what is name
+
+for country in root.findall('food'):
+    name = country.find('name').text
+    print(name)
+Belgian Waffles
+Strawberry Belgian Waffles
+Berry-Berry Belgian Waffles
+French Toast
+Homestyle Breakfast
+
+# what are the prices
+
+for country in root.findall('food'):
+    price = country.find('price').text
+    print(price)
+$5.95
+$7.95
+$8.95
+$4.50
+$6.95
+
+# what are descriptions.
+
+for country in root.findall('food'):
+    description = country.find('description').text
+    print(description)
+Two of our famous Belgian Waffles with plenty of real maple syrup
+Light Belgian waffles covered with strawberries and whipped cream
+Belgian waffles covered with assorted fresh berries and whipped cream
+Thick slices made from our homemade sourdough bread
+Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+
+# what are the prices. 
+
+for country in root.findall('food'):
+    calories = country.find('calories').text
+    print(calories)
+650
+900
+900
+600
+950
