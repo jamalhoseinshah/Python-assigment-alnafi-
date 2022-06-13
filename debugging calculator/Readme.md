@@ -29,7 +29,7 @@ test_function()
 
 
 
-####################################### OUTPUT ########################################################
+################# OUTPUT #####################
 
 test_function()
 The above four function lines are corrected 
@@ -37,7 +37,7 @@ The code is done!
 4.0
 
 
-########### We have done following calculation with regarding established function in python #########################
+########### We have done following calculation with regarding established function in python #########
 
 value = multiple_values(2,3)
 
@@ -60,7 +60,7 @@ value
 Out[48]: 5
 
 
-############################################ SECOND METHOD ##############################################
+################### SECOND METHOD ##################
 # -*- coding: utf-8 -*-
 """
 Intially created this below calculator with Debugging function.
